@@ -39,6 +39,7 @@ def main():
     sheet = service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE_DATA).execute()
     rows = result.get('values', [])
+    disallowCategories = ['5']
 
     if not rows:
         print('No data found.')
@@ -53,6 +54,12 @@ def main():
                 if cursorAtProfession is True: 
                     cursorAtProfession = False
                 lines.append(u'  - id: {0} \t # --------- {1} --------- #'.format(row[1], row[3]))
+                printLastLine(lines)
+                if row[1] in disallowCategories:
+                    disallow = 'true'
+                else:
+                    disallow = 'false'
+                lines.append(u'    disallow-training: {0}'.format(disallow))
                 printLastLine(lines)
 
             if row[0] == 'p':
