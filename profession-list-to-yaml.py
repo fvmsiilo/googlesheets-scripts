@@ -39,7 +39,7 @@ def main():
     sheet = service.spreadsheets()
     result = sheet.values().get(spreadsheetId=SPREADSHEET_ID, range=RANGE_DATA).execute()
     rows = result.get('values', [])
-    disallowCategories = ['5']
+    disallowCategories = ['5000']
 
     if not rows:
         print('No data found.')
