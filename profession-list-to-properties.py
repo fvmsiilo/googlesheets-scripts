@@ -10,7 +10,7 @@ from google.auth.transport.requests import Request
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
 SPREADSHEET_ID = '15cpxPUJ5mtMuXO43XDlT1AA6kcOCEna0rs3Jk769z8A'
-RANGE_DATA = 'professions!A2:F80'
+RANGE_DATA = 'professions!A2:F82'
 
 FILENAME = 'professions'
 FILENAME_EXTENSION = '.properties'
